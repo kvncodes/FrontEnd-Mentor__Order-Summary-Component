@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+	--clr-primary-100: hsl(225, 100%, 98%);
+	--clr-primary-200: hsl(225, 100%, 94%);
+	--clr-primary-300: hsl(230, 18%, 61%);
+	--clr-primary-400: hsl(245, 75%, 52%);
+
+	--clr-neutral-600: hsl(224, 23%, 55%);
+	--clr-neutral-700: hsl(223, 47%, 23%);
+
+	--ff-base: "Red Hat Display", sans-serif;
+
+	--fw-base: 500;
+	--fw-strong: 700;
+	--fw-bold: 900;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
+}
+
+html,
+body {
+	height: 100vh;
+}
+
+body {
+	/* 4. Add accessible line-height */
+	line-height: 1.5;
+	/* 5. Improve text rendering */
+	-webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+	text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+	isolation: isolate;
+}
+
+p {
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--clr-primary-200);
+	font-family: var(--ff-base);
+	font-size: 1rem;
+	font-weight: var(--fw-base);
+	line-height: 1.6;
+	color: var(--clr-neutral-700);
+	padding: 5rem 1.5rem;
+}
+
+section {
+	background-color: white;
+	border-radius: 1.5rem;
+	overflow: hidden;
+}
+
+.order-summary-card {
+	display: grid;
+	gap: 1.3rem;
+	max-width: 460px;
+}
+
+.order-summary-card .order-summary-card-title {
+	font-weight: var(--fw-bold);
+	color: var(--clr-neutral-700);
+	text-align: center;
+	margin-block-start: 1rem;
+}
+
+.order-summary-card .order-details {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	padding-inline: 1.5rem;
+	color: var(--clr-primary-300);
+	font-weight: var(--fw-strong);
+}
+
+@media (width > 496px) {
+	.card-header-image {
+		width: 100%;
+	}
+}
+
+.flex-group {
+	display: grid;
+	grid-template-columns: max-content 1fr 1fr;
+	padding: 1rem;
+	gap: 1.5rem;
+	background-color: var(--clr-primary-100);
+	border-radius: 1rem;
+	margin-inline-start: 1rem;
+	margin-inline-end: 1rem;
+}
+
+.flex-group .music-icon {
+}
+
+.flex-group .plan-details-group {
+	text-align: center;
+}
+
+.flex-group h2 {
+	font-size: 1rem;
+	font-weight: var(--fw-bold);
+	color: var(--clr-neutral-700);
+}
+
+.flex-group .change-plan-text {
+	display: grid;
+	height: 100%;
+	align-self: center;
+	justify-self: center;
+	font-size: 0.875rem;
+	color: var(--clr-primary-400);
+	font-weight: var(--fw-bold);
+	text-align: center;
+	align-items: center;
+	justify-content: end;
+	margin-left: 1rem;
+}
+
+.details-text {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	color: var(--clr-primary-300);
+	font-weight: var(--fw-strong);
+	line-height: 1.4;
+}
+
+.bottom-part {
+	display: grid;
+}
+
+.button {
+	margin-inline: 1rem;
+	border: none;
+	border-radius: 0.5rem;
+	padding: 1rem;
+	color: white;
+	background-color: var(--clr-primary-400);
+	font-weight: var(--fw-bold);
+	margin-block: 0.5rem;
+	transition: background-color 0.15s ease;
+	box-shadow: 0 20px 20px 0px hsla(245, 75%, 52%, 25%);
+}
+
+.button:hover,
+.button:focus-visible {
+	position: relative;
+	background-color: hsla(245, 75%, 52%, 75%);
+}
+
+.cancel-order-text {
+	text-align: center;
+	color: var(--clr-neutral-600);
+	font-weight: var(--fw-bold);
+	font-size: 0.9rem;
+	padding-bottom: 2rem;
+}
